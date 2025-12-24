@@ -1,0 +1,283 @@
+{
+    "projects": [
+        {
+            "project_name": "RESTful API with User Authentication",
+            "description": "A backend API that handles user registration, login, and profile management with JWT authentication. The project teaches fundamental API design, authentication flow, and database integration.",
+            "difficulty": "intermediate",
+            "skills": [
+                "API design and endpoints",
+                "Authentication and authorization",
+                "Database modeling",
+                "Middleware implementation",
+                "Password hashing and security"
+            ],
+            "tools": [
+                "Node.js/Express or Python/Flask/Django",
+                "Database (PostgreSQL/MySQL/MongoDB)",
+                "JWT tokens",
+                "Postman/Insomnia for testing",
+                "Environment variables"
+            ],
+            "learning_outcomes": [
+                "Design and implement RESTful APIs",
+                "Implement secure authentication systems",
+                "Handle database migrations and models",
+                "Use middleware for authentication and validation",
+                "Secure sensitive data and implement best practices"
+            ],
+            "tasks": [
+                {
+                    "task_title": "Set Up Proper Folder Structure",
+                    "task_details": {
+                        "objective": "Create a scalable and organized folder structure following MVC (Model-View-Controller) or similar architecture pattern for maintainable backend development.",
+                        "why_this_is_important": "A well-structured backend project makes code navigation easier, separates concerns, and allows for scalability as the application grows. It's essential for team collaboration and long-term maintenance.",
+                        "instructions": [
+                            "1. Create a main project folder named `user-auth-api`.",
+                            "2. Initialize a package.json or requirements.txt file for dependency management.",
+                            "3. Create the following directories:\n   - `src/` or `app/` (main application code)\n   - `config/` (configuration files, database setup)\n   - `controllers/` (request handlers)\n   - `models/` (database schemas/models)\n   - `routes/` or `api/` (route definitions)\n   - `middleware/` (authentication, validation, error handling)\n   - `utils/` (helper functions, constants)\n   - `tests/` (test files)\n   - `migrations/` or `database/` (database migration scripts)",
+                            "4. Create environment configuration files:\n   - `.env.example` (template with required environment variables)\n   - `.env` (actual environment variables, added to .gitignore)\n   - `.gitignore` file to exclude sensitive files",
+                            "5. Create entry point files:\n   - `index.js`, `server.js`, or `app.js` (main server file)\n   - `package.json` with proper scripts (start, dev, test)",
+                            "6. Set up configuration files for your chosen database and framework.",
+                            "7. Your final structure should resemble:\nuser-auth-api/\n├── src/\n│   ├── controllers/\n│   │   ├── authController.js\n│   │   └── userController.js\n│   ├── models/\n│   │   └── User.js\n│   ├── routes/\n│   │   ├── authRoutes.js\n│   │   └── userRoutes.js\n│   ├── middleware/\n│   │   ├── auth.js\n│   │   └── validation.js\n│   └── utils/\n│       ├── database.js\n│       └── helpers.js\n├── config/\n│   └── database.js\n├── tests/\n│   ├── auth.test.js\n│   └── user.test.js\n├── .env.example\n├── .env\n├── .gitignore\n├── package.json\n└── server.js"
+                        ],
+                        "expected_output": "A clean, organized folder structure following MVC pattern with separated concerns, configuration files, and clear entry points ready for backend development.",
+                        "skills_practiced": [
+                            "Project architecture planning",
+                            "MVC pattern implementation",
+                            "Environment configuration",
+                            "Scalable code organization"
+                        ]
+                    }
+                },
+                {
+                    "task_title": "Design User Model and Database Schema",
+                    "task_details": {
+                        "objective": "Create a User model with proper fields and set up database connection and migrations.",
+                        "why_this_is_important": "A well-designed database schema is the foundation of any backend application. It ensures data integrity and efficient querying.",
+                        "instructions": [
+                            "1. Choose a database (PostgreSQL, MySQL, or MongoDB) and set up the connection in config/database.js",
+                            "2. Create a User model/schema with the following fields:\n   - id (primary key)\n   - username (unique, required)\n   - email (unique, required)\n   - password (hashed, required)\n   - createdAt and updatedAt timestamps\n   - Optional: firstName, lastName, role, isActive",
+                            "3. Implement password hashing using bcrypt or similar library",
+                            "4. Create database migration files if using SQL database",
+                            "5. Set up model validation for required fields and data types",
+                            "6. Create a seed script to populate test users if needed"
+                        ],
+                        "expected_output": "A fully defined User model with database connection, migrations, and password hashing implemented.",
+                        "skills_practiced": [
+                            "Database modeling",
+                            "Schema design",
+                            "Password security",
+                            "Data validation"
+                        ]
+                    }
+                },
+                {
+                    "task_title": "Implement Authentication Endpoints",
+                    "task_details": {
+                        "objective": "Create API endpoints for user registration, login, and token management.",
+                        "why_this_is_important": "Authentication endpoints are crucial for securing APIs and managing user sessions in modern applications.",
+                        "instructions": [
+                            "1. Create auth routes in routes/authRoutes.js with endpoints:\n   - POST /api/auth/register\n   - POST /api/auth/login\n   - POST /api/auth/logout\n   - POST /api/auth/refresh-token",
+                            "2. Implement registration logic:\n   - Validate input data (email, password)\n   - Check for existing user\n   - Hash password\n   - Create user in database\n   - Generate JWT token",
+                            "3. Implement login logic:\n   - Validate credentials\n   - Verify password\n   - Generate access and refresh tokens",
+                            "4. Set up JWT token generation and verification",
+                            "5. Implement token refresh mechanism"
+                        ],
+                        "expected_output": "Fully functional authentication endpoints with JWT token generation, validation, and refresh capabilities.",
+                        "skills_practiced": [
+                            "API endpoint design",
+                            "JWT implementation",
+                            "Password verification",
+                            "Session management"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "project_name": "E-commerce Backend System",
+            "description": "A complete e-commerce backend with product catalog, shopping cart, order processing, and payment integration simulation. The project focuses on complex database relationships, business logic, and third-party API integration.",
+            "difficulty": "advanced",
+            "skills": [
+                "Complex database relationships",
+                "Order processing logic",
+                "Payment gateway integration",
+                "Inventory management",
+                "API rate limiting and caching"
+            ],
+            "tools": [
+                "Node.js/Express or Python/Django",
+                "Relational database (PostgreSQL/MySQL)",
+                "Redis for caching",
+                "Stripe/PayPal API (sandbox)",
+                "Docker (optional)"
+            ],
+            "learning_outcomes": [
+                "Design complex database schemas with multiple relationships",
+                "Implement complete order lifecycle management",
+                "Integrate third-party payment systems",
+                "Handle concurrent operations and race conditions",
+                "Optimize database queries and implement caching"
+            ],
+            "tasks": [
+                {
+                    "task_title": "Set Up Proper Folder Structure",
+                    "task_details": {
+                        "objective": "Create a sophisticated, scalable folder structure for a complex e-commerce system with multiple services and modules.",
+                        "why_this_is_important": "E-commerce systems have complex business logic that requires clear separation of concerns. A proper structure prevents code spaghetti and allows for microservices migration if needed.",
+                        "instructions": [
+                            "1. Create main project folder: `ecommerce-backend`",
+                            "2. Set up a monorepo or modular structure:\n   - `packages/` or `services/` for potential service separation\n   - `shared/` for common utilities and types",
+                            "3. Create the core application structure:\n   - `src/\n     ├── api/ (API layer)\n     │   ├── controllers/\n     │   ├── middleware/\n     │   ├── routes/\n     │   └── validators/\n     ├── domain/ (business logic)\n     │   ├── services/\n     │   ├── models/\n     │   └── repositories/\n     ├── infrastructure/ (external concerns)\n     │   ├── database/\n     │   ├── cache/\n     │   ├── payment/\n     │   └── email/\n     └── shared/ (cross-cutting concerns)\n         ├── utils/\n         ├── constants/\n         └── types/`",
+                            "4. Set up configuration management:\n   - `config/\n     ├── development.js\n     ├── production.js\n     ├── test.js\n     └── index.js (config loader)`",
+                            "5. Create deployment and orchestration files:\n   - `docker-compose.yml`\n   - `Dockerfile`\n   - `.github/workflows/` for CI/CD",
+                            "6. Set up testing structure:\n   - `tests/\n     ├── unit/\n     ├── integration/\n     ├── e2e/\n     └── fixtures/`",
+                            "7. Final structure example:\necommerce-backend/\n├── src/\n│   ├── api/\n│   ├── domain/\n│   ├── infrastructure/\n│   └── shared/\n├── config/\n├── tests/\n├── scripts/ (database seeds, migrations)\n├── docker-compose.yml\n├── Dockerfile\n├── .env.example\n├── .gitignore\n└── package.json"
+                        ],
+                        "expected_output": "A production-ready, scalable folder structure supporting complex e-commerce operations with clear separation of concerns and infrastructure setup.",
+                        "skills_practiced": [
+                            "Enterprise architecture",
+                            "Domain-driven design",
+                            "Service separation",
+                            "Infrastructure planning"
+                        ]
+                    }
+                },
+                {
+                    "task_title": "Design Complex Database Schema",
+                    "task_details": {
+                        "objective": "Create a comprehensive database schema supporting products, categories, users, carts, orders, payments, and inventory.",
+                        "why_this_is_important": "E-commerce requires sophisticated data relationships and integrity constraints to handle real-world business scenarios.",
+                        "instructions": [
+                            "1. Design these core tables/models:\n   - Users (customers, admins)\n   - Products (with variants, SKUs)\n   - Categories (hierarchical)\n   - Cart and CartItems\n   - Orders and OrderItems\n   - Payments\n   - Inventory (stock tracking)\n   - Reviews and Ratings",
+                            "2. Implement proper relationships:\n   - One-to-many: User → Orders\n   - Many-to-many: Products → Categories\n   - Polymorphic: Payments (for orders, subscriptions)\n   - Self-referencing: Category hierarchy",
+                            "3. Add database constraints:\n   - Unique constraints for SKUs\n   - Foreign key constraints\n   - Check constraints for order status",
+                            "4. Create migration scripts for all tables",
+                            "5. Set up database indexes for frequent queries"
+                        ],
+                        "expected_output": "A complete, normalized database schema with all necessary tables, relationships, and constraints for e-commerce operations.",
+                        "skills_practiced": [
+                            "Database normalization",
+                            "Complex relationships",
+                            "Data integrity",
+                            "Performance optimization"
+                        ]
+                    }
+                },
+                {
+                    "task_title": "Implement Shopping Cart and Order Processing",
+                    "task_details": {
+                        "objective": "Build the complete shopping cart functionality and order processing pipeline with inventory management.",
+                        "why_this_is_important": "The cart and order system is the core revenue-generating component of any e-commerce platform, requiring robust error handling and transaction management.",
+                        "instructions": [
+                            "1. Implement cart endpoints:\n   - POST /api/cart/add-item\n   - GET /api/cart\n   - PUT /api/cart/update-quantity\n   - DELETE /api/cart/remove-item",
+                            "2. Create order processing flow:\n   - Cart validation\n   - Inventory check\n   - Address validation\n   - Order creation\n   - Payment initiation\n   - Inventory update",
+                            "3. Implement transaction management for order creation",
+                            "4. Add order status tracking (pending, processing, shipped, delivered)",
+                            "5. Handle edge cases:\n   - Out of stock items\n   - Price changes during checkout\n   - Concurrent modifications"
+                        ],
+                        "expected_output": "A robust shopping cart and order processing system with proper transaction handling and error management.",
+                        "skills_practiced": [
+                            "Transaction management",
+                            "Business logic implementation",
+                            "Error handling",
+                            "State management"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "project_name": "Real-time Chat Application Backend",
+            "description": "A WebSocket-based real-time chat application backend supporting multiple chat rooms, direct messaging, and message persistence. The project teaches real-time communication patterns and concurrent connection management.",
+            "difficulty": "intermediate",
+            "skills": [
+                "WebSocket implementation",
+                "Real-time data synchronization",
+                "Room-based messaging",
+                "Connection management",
+                "Message persistence"
+            ],
+            "tools": [
+                "Node.js with Socket.io or Python with FastAPI/WebSockets",
+                "Redis for pub/sub and session storage",
+                "Database for message history",
+                "JWT for authentication",
+                "Docker for containerization"
+            ],
+            "learning_outcomes": [
+                "Implement real-time bidirectional communication",
+                "Manage multiple concurrent WebSocket connections",
+                "Design room-based chat architecture",
+                "Handle connection lifecycle events",
+                "Persist and retrieve chat history efficiently"
+            ],
+            "tasks": [
+                {
+                    "task_title": "Set Up Proper Folder Structure",
+                    "task_details": {
+                        "objective": "Create a structured project layout that separates WebSocket logic, HTTP API, and real-time event handling for a scalable chat application.",
+                        "why_this_is_important": "Real-time applications have unique architectural needs. Separating concerns ensures maintainability as features like typing indicators, file sharing, or video calls are added.",
+                        "instructions": [
+                            "1. Create main project folder: `chat-backend`",
+                            "2. Initialize with WebSocket library of choice (Socket.io, ws, etc.)",
+                            "3. Create this structure:\n   - `src/\n     ├── socket/ (WebSocket handling)\n     │   ├── handlers/ (event handlers)\n     │   ├── middleware/ (socket auth)\n     │   └── managers/ (connection managers)\n     ├── api/ (REST endpoints)\n     │   ├── controllers/\n     │   ├── routes/\n     │   └── validators/\n     ├── services/ (business logic)\n     │   ├── chatService.js\n     │   ├── roomService.js\n     │   └── userService.js\n     ├── models/ (database models)\n     │   ├── Message.js\n     │   ├── Room.js\n     │   └── User.js\n     ├── utils/ (helpers)\n     │   ├── socketHelpers.js\n     │   └── validators.js\n     └── config/ (configuration)\n         ├── socket.js\n         └── database.js`",
+                            "4. Set up event-driven architecture:\n   - Create event constants file\n   - Set up event emitters/listeners\n   - Implement Redis pub/sub for scaling",
+                            "5. Create connection management setup:\n   - User session tracking\n   - Room membership management\n   - Connection state persistence",
+                            "6. Final structure example:\nchat-backend/\n├── src/\n│   ├── socket/\n│   ├── api/\n│   ├── services/\n│   ├── models/\n│   ├── utils/\n│   └── config/\n├── tests/\n│   ├── socket.test.js\n│   └── api.test.js\n├── docker-compose.yml\n├── .env.example\n└── package.json"
+                        ],
+                        "expected_output": "A well-organized project structure specifically designed for real-time applications with clear separation between WebSocket and HTTP layers.",
+                        "skills_practiced": [
+                            "Real-time architecture",
+                            "Event-driven design",
+                            "Connection management",
+                            "Scalability planning"
+                        ]
+                    }
+                },
+                {
+                    "task_title": "Implement WebSocket Server and Connection Handling",
+                    "task_details": {
+                        "objective": "Set up the WebSocket server, handle connections/disconnections, and implement basic authentication.",
+                        "why_this_is_important": "Proper connection management is crucial for real-time applications to handle user joins/leaves, reconnections, and maintain session state.",
+                        "instructions": [
+                            "1. Initialize WebSocket server alongside HTTP server",
+                            "2. Implement connection middleware for JWT authentication",
+                            "3. Handle connection events:\n   - 'connection' - new user connects\n   - 'disconnect' - user leaves\n   - 'reconnect' - user reconnects",
+                            "4. Store active connections in memory or Redis",
+                            "5. Implement heartbeat/ping-pong to detect dead connections",
+                            "6. Create user presence tracking (online/offline status)"
+                        ],
+                        "expected_output": "A functional WebSocket server with authentication, connection lifecycle management, and user presence tracking.",
+                        "skills_practiced": [
+                            "WebSocket implementation",
+                            "Connection lifecycle",
+                            "Authentication middleware",
+                            "Session management"
+                        ]
+                    }
+                },
+                {
+                    "task_title": "Build Chat Room and Messaging System",
+                    "task_details": {
+                        "objective": "Implement room-based chat functionality with message broadcasting, persistence, and real-time updates.",
+                        "why_this_is_important": "The core functionality of any chat application is reliable message delivery and room management.",
+                        "instructions": [
+                            "1. Implement room management:\n   - Join/leave rooms\n   - Create/delete rooms\n   - List available rooms\n   - Room permissions",
+                            "2. Handle chat events:\n   - 'message' - send/receive messages\n   - 'typing' - typing indicators\n   - 'message_read' - read receipts",
+                            "3. Implement message persistence:\n   - Store messages in database\n   - Retrieve chat history\n   - Pagination for old messages",
+                            "4. Add real-time features:\n   - Online users list\n   - User join/leave notifications\n   - Message broadcasting to room members"
+                        ],
+                        "expected_output": "A complete chat system with room management, real-time messaging, message persistence, and user presence features.",
+                        "skills_practiced": [
+                            "Real-time broadcasting",
+                            "Room management",
+                            "Message persistence",
+                            "Event handling"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

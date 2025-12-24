@@ -1,0 +1,25 @@
+# API
+fastapi==0.115.2
+uvicorn==0.23.2
+
+# LangChain ومكتبات Google GenAI
+langchain==0.1.147
+langchain-google-genai==0.1.1
+langchain-core==0.0.181
+langchain-community==0.0.239
+
+# Embeddings و VectorStore
+sentence-transformers==2.2.2
+chromadb==0.4.8
+
+# Environment variables
+python-dotenv==1.0.1
+
+
+langchain==0.1.16 
+langchain-core==0.1.45
+langchain-community==0.0.34 
+langchain-google-genai==0.0.5 
+unstructured 
+chromadb
+sentence-transformers
